@@ -1,8 +1,13 @@
 <?php
 require('dbc.php');
+session_start();
 $fname = $_POST['fname']; 
 $lname = $_POST['lname'];
 $pword = $_POST['pword'];
+$uname = $_POST['uname'];
+
+
+
 
 
 $sql = "INSERT INTO userpp(fname,lname,pword)
