@@ -2,6 +2,7 @@
 session_start();
 require('./dbc.php');
 require('inc/header.php');
+require('inc/functions.php');
 ?>
 
 <?php
@@ -21,10 +22,13 @@ if($_SERVER["REQUEST_METHOD"] =="POST"){
         session_register("uname");
         $_SESSION['login_user'] = $uname;
 
-        header("Location: welcome.php");
-
+        //header("Location: welcome.php");
+        //die();
+       $url = "http://l27.0.0.1/cave/inc/welcome.php";
+       redirection($url);
     } else {
-        header("Location: errorpage.php");
+       $url = "http://127.0.0.1/cave/register.php";
+       redirection($url);
     }
 }
 ?>
